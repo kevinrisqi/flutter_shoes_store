@@ -1,6 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:flutter_shoes_store/theme.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_shoes_store/pages/sign_in_page.dart';
+import 'package:flutter_shoes_store/pages/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,51 +20,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: bgColor3,
-        appBar: AppBar(
-          backgroundColor: bgColor1,
-          title: Text(
-            'First Setting',
-            style: GoogleFonts.poppins(),
-          ),
-        ),
-        body: Center(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
-                width: 75,
-                height: 75,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/icon_avatar.png'),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Kevin Risqi',
-                style: primaryTextStyle.copyWith(
-                  fontSize: 20,
-                  fontWeight: medium,
-                ),
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              Text(
-                "Hi, I'am is a Mobile Developer",
-                style: secondaryTextStyle,
-              ),
-            ],
-          ),
-        ),
-      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SplashPage(),
+        '/sign-in': (context) => SignInPage()
+      },
     );
   }
 }
