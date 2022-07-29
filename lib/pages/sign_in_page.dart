@@ -130,12 +130,14 @@ class SignInPage extends StatelessWidget {
       );
     }
 
-    Widget submitButton() {
+    Widget signInButton() {
       return Container(
         width: double.infinity,
         height: 50,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/main');
+          },
           style: ElevatedButton.styleFrom(
             primary: primaryColor,
             shape: RoundedRectangleBorder(
@@ -206,7 +208,7 @@ class SignInPage extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              submitButton(),
+              signInButton(),
               Spacer(),
               footer(),
             ],
