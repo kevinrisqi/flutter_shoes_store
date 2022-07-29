@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_shoes_store/pages/sign_in_page.dart';
+import 'package:flutter_shoes_store/pages/sign_up_page.dart';
 import 'package:flutter_shoes_store/pages/splash_page.dart';
 
 void main() {
@@ -23,7 +24,8 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       routes: {
         '/': (context) => SplashPage(),
-        '/sign-in': (context) => SignInPage()
+        '/sign-in': (context) => SignInPage(),
+        '/sign-up': (context) => SignUpPage(),
       },
     );
   }
