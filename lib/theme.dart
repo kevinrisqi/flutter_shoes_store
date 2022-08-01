@@ -7,6 +7,7 @@ Color primaryColor = const Color(0xff6C5ECF);
 Color secondaryColor = const Color(0xff38ABBE);
 Color alertColor = const Color(0xffED6363);
 Color priceColor = const Color(0xff2C96F1);
+Color greyColor = const Color(0xff808191);
 
 Color bgColor1 = const Color(0xff1F1D2B);
 Color bgColor2 = const Color(0xff2B2937);
