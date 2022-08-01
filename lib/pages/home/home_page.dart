@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shoes_store/theme.dart';
 import 'package:flutter_shoes_store/widgets/product_card.dart';
+import 'package:flutter_shoes_store/widgets/product_tile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -190,11 +191,37 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget newArrivalList() {
+      return Container(
+        margin: EdgeInsets.all(defaultMargin),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'New Arrival',
+              style: primaryTextStyle.copyWith(
+                fontSize: 22,
+                fontWeight: semiBold,
+              ),
+            ),
+            SizedBox(
+              height: 14,
+            ),
+            ProductTile(),
+            ProductTile(),
+            ProductTile(),
+            ProductTile(),
+          ],
+        ),
+      );
+    }
+
     return ListView(
       children: [
         header(),
         categoryList(),
         popularList(),
+        newArrivalList(),
       ],
     );
   }
