@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_shoes_store/theme.dart';
+import 'package:flutter_shoes_store/widgets/chat_tile.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class ChatPage extends StatelessWidget {
       );
     }
 
-    Widget content() {
+    Widget emptyChat() {
       return Expanded(
         child: Container(
           child: Column(
@@ -80,9 +81,29 @@ class ChatPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return Expanded(
+        child: ListView(
+          children: [
+            ChatTile(),
+            ChatTile(),
+            ChatTile(),
+            ChatTile(),
+            ChatTile(),
+            ChatTile(),
+            ChatTile(),
+            ChatTile(),
+            ChatTile(),
+            ChatTile(),
+          ],
+        ),
+      );
+    }
+
     return Column(
       children: [
         header(),
+        // emptyChat(),
         content(),
       ],
     );
