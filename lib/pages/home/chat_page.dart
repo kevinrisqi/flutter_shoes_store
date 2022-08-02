@@ -86,15 +86,6 @@ class ChatPage extends StatelessWidget {
         child: ListView(
           children: [
             ChatTile(),
-            ChatTile(),
-            ChatTile(),
-            ChatTile(),
-            ChatTile(),
-            ChatTile(),
-            ChatTile(),
-            ChatTile(),
-            ChatTile(),
-            ChatTile(),
           ],
         ),
       );
