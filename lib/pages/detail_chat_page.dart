@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_shoes_store/theme.dart';
+import 'package:flutter_shoes_store/widgets/chat_bubble.dart';
 
 class DetailChatPage extends StatelessWidget {
   const DetailChatPage({Key? key}) : super(key: key);
@@ -106,6 +107,16 @@ class DetailChatPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return ListView(
+        padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+        children: [
+          ChatBubble(message: 'Hi, This item is still available?'),
+          ChatBubble(message: 'Good night, This item is only available in size 42 and 43', isSender: true,),
+        ],
+      );
+    }
+
     return Scaffold(
       backgroundColor: bgColor3,
       appBar: PreferredSize(
@@ -148,6 +159,7 @@ class DetailChatPage extends StatelessWidget {
           ),
         ),
       ),
+      body: content(),
       bottomNavigationBar: chatInput(),
     );
   }
