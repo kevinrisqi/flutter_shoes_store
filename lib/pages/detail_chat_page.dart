@@ -75,7 +75,7 @@ class DetailChatPage extends StatelessWidget {
                 Expanded(
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                      vertical: 12,
+                      vertical: 14,
                       horizontal: 16,
                     ),
                     height: 50,
