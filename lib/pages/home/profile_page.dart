@@ -105,6 +105,7 @@ class ProfilePage extends StatelessWidget {
                         SettingMenu(text: 'Privacy & Policy'),
                         SettingMenu(text: 'Term of Service'),
                         SettingMenu(text: 'Rate App'),
+                        SettingMenu(text: 'About Us'),
                       ],
                     ),
                   ],

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_shoes_store/pages/detail_chat_page.dart';
+import 'package:flutter_shoes_store/pages/edit_profile_page.dart';
 import 'package:flutter_shoes_store/pages/home/main_page.dart';
 import 'package:flutter_shoes_store/pages/sign_in_page.dart';
 import 'package:flutter_shoes_store/pages/sign_up_page.dart';
@@ -30,6 +31,7 @@ class _MyAppState extends State<MyApp> {
         '/sign-up': (context) => SignUpPage(),
         '/main': (context) => MainPage(),
         '/detail-chat': (context) => DetailChatPage(),
+        '/edit-profile': (context) => EditProfilePage(),
       },
     );
   }
