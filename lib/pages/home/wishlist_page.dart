@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_shoes_store/theme.dart';
+import 'package:flutter_shoes_store/widgets/wishlist_tile.dart';
 
 class WishlistPage extends StatelessWidget {
   const WishlistPage({Key? key}) : super(key: key);
@@ -80,10 +81,22 @@ class WishlistPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return Expanded(
+        child: ListView(
+          children: [
+            WishlistTile(image: 'assets/image_shoes_1.png', price: 58.45, name: 'Terrex Urban Low',),
+            WishlistTile(image: 'assets/image_shoes_2.png', price: 70.45, name: 'Terrex Urban High',),
+          ],
+        ),
+      );
+    }
+
     return Column(
       children: [
         header(),
-        emptyWishlist(),
+        // emptyWishlist(),
+        content(),
       ],
     );
   }
