@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_shoes_store/theme.dart';
+import 'package:flutter_shoes_store/widgets/cart_item.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -66,106 +67,97 @@ class CartPage extends StatelessWidget {
     }
 
     Widget content() {
-      return (ListView(
+      return ListView(
         children: [
           Container(
             margin: EdgeInsets.all(defaultMargin),
             child: Column(
               children: [
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 10,
-                  ),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12), color: bgColor4),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              'assets/image_shoes_1.png',
-                              width: 80,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 12,
-                          ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Terrex Urban Low',
-                                  style: primaryTextStyle.copyWith(
-                                    fontWeight: semiBold,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                SizedBox(
-                                  height: 2,
-                                ),
-                                Text(
-                                  '\$67,89',
-                                  style: priceTextStyle,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              Image.asset(
-                                'assets/button_add.png',
-                                width: 20,
-                              ),
-                              SizedBox(
-                                height: 4,
-                              ),
-                              Text(
-                                '2',
-                                style: primaryTextStyle.copyWith(
-                                  fontWeight: medium,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 4,
-                              ),
-                              Image.asset(
-                                'assets/button_min.png',
-                                width: 20,
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 12,
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/button_delete.png',
-                            width: 12,
-                          ),
-                          SizedBox(
-                            width: 4,
-                          ),
-                          Text(
-                            'Remove',
-                            style: alertTextStyle.copyWith(fontWeight: light),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                )
+                CartItem(),
+                CartItem(),
+                CartItem(),
+                CartItem(),
+                CartItem(),
               ],
             ),
           )
         ],
-      ));
+      );
+    }
+
+    Widget footer() {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            margin: EdgeInsets.only(
+              left: defaultMargin,
+              right: defaultMargin,
+              top: defaultMargin,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Subtotal',
+                  style: primaryTextStyle,
+                ),
+                Text(
+                  '\$147,89',
+                  style: priceTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: semiBold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: defaultMargin,
+          ),
+          Container(
+            width: double.infinity,
+            height: 1,
+            decoration: BoxDecoration(
+              color: subtitleColor,
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(defaultMargin),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: primaryColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 13,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Continue to Checkout',
+                      style: primaryTextStyle.copyWith(
+                        fontSize: 16,
+                        fontWeight: semiBold,
+                      ),
+                    ),
+                    Icon(
+                      Icons.navigate_next_sharp,
+                      size: 25,
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
     }
 
     return Scaffold(
@@ -184,6 +176,7 @@ class CartPage extends StatelessWidget {
         ),
       ),
       body: content(),
+      bottomNavigationBar: footer(),
     );
   }
 }
