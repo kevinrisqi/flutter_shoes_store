@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_shoes_store/pages/cart_page.dart';
 import 'package:flutter_shoes_store/pages/detail_chat_page.dart';
 import 'package:flutter_shoes_store/pages/edit_profile_page.dart';
 import 'package:flutter_shoes_store/pages/home/main_page.dart';
@@ -32,6 +33,7 @@ class _MyAppState extends State<MyApp> {
         '/main': (context) => MainPage(),
         '/detail-chat': (context) => DetailChatPage(),
         '/edit-profile': (context) => EditProfilePage(),
+        '/cart': (context) => CartPage(),
       },
     );
   }

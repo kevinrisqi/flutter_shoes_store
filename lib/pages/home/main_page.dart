@@ -21,7 +21,9 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     Widget cartButton() {
       return FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/cart');
+        },
         backgroundColor: secondaryColor,
         child: Image.asset(
           'assets/icon_cart.png',
@@ -113,11 +115,10 @@ class _MainPageState extends State<MainPage> {
     }
 
     return Scaffold(
-      floatingActionButton: cartButton(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: customNavBar(),
-      backgroundColor: bgColor3,
-      body: body()
-    );
+        floatingActionButton: cartButton(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: customNavBar(),
+        backgroundColor: bgColor3,
+        body: body());
   }
 }
