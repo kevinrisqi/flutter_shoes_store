@@ -273,7 +273,9 @@ class CheckoutPage extends StatelessWidget {
             width: double.infinity,
             margin: EdgeInsets.all(defaultMargin),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/checkout-success');
+              },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
