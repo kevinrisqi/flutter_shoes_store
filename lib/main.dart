@@ -9,6 +9,7 @@ import 'package:flutter_shoes_store/pages/home/main_page.dart';
 import 'package:flutter_shoes_store/pages/sign_in_page.dart';
 import 'package:flutter_shoes_store/pages/sign_up_page.dart';
 import 'package:flutter_shoes_store/pages/splash_page.dart';
+import 'package:flutter_shoes_store/pages/success_checkout_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,6 +37,7 @@ class _MyAppState extends State<MyApp> {
         '/edit-profile': (context) => EditProfilePage(),
         '/cart': (context) => CartPage(),
         '/checkout': (context) => CheckoutPage(),
+        '/checkout-success': (context) => SuccessCheckoutPage(),
       },
     );
   }

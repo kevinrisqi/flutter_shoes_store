@@ -197,22 +197,8 @@ class CheckoutPage extends StatelessWidget {
       );
     }
 
-    return Scaffold(
-      backgroundColor: bgColor3,
-      appBar: AppBar(
-        toolbarHeight: MediaQuery.of(context).size.height * 0.09,
-        backgroundColor: bgColor1,
-        centerTitle: true,
-        elevation: 0,
-        title: Text(
-          'Checkout Details',
-          style: primaryTextStyle.copyWith(
-            fontSize: 18,
-            fontWeight: medium,
-          ),
-        ),
-      ),
-      body: ListView(
+    Widget content() {
+      return ListView(
         children: [
           Container(
             margin: EdgeInsets.all(defaultMargin),
@@ -257,7 +243,25 @@ class CheckoutPage extends StatelessWidget {
             ),
           )
         ],
+      );
+    }
+
+    return Scaffold(
+      backgroundColor: bgColor3,
+      appBar: AppBar(
+        toolbarHeight: MediaQuery.of(context).size.height * 0.09,
+        backgroundColor: bgColor1,
+        centerTitle: true,
+        elevation: 0,
+        title: Text(
+          'Checkout Details',
+          style: primaryTextStyle.copyWith(
+            fontSize: 18,
+            fontWeight: medium,
+          ),
+        ),
       ),
+      body: content(),
     );
   }
 }
