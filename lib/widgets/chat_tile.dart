@@ -14,7 +14,7 @@ class ChatTile extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: 67,
+        height: 70,
         margin: EdgeInsets.only(
           left: defaultMargin,
           right: defaultMargin,

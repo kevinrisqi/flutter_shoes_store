@@ -5,6 +5,8 @@ import 'package:flutter_shoes_store/theme.dart';
 import 'package:flutter_shoes_store/widgets/product_card.dart';
 import 'package:flutter_shoes_store/widgets/product_tile.dart';
 
+import '../../widgets/category_button.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -57,99 +59,11 @@ class HomePage extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(12)),
-                child: Text(
-                  'All Shoes',
-                  style: primaryTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  color: transparentColor,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: subtitleColor),
-                ),
-                child: Text(
-                  'Running',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  color: transparentColor,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: subtitleColor),
-                ),
-                child: Text(
-                  'Training',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  color: transparentColor,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: subtitleColor),
-                ),
-                child: Text(
-                  'Basketball',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  color: transparentColor,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: subtitleColor),
-                ),
-                child: Text(
-                  'Hiking',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
+              CategoryButton(name: 'All Shoes', isActive: true),
+              CategoryButton(name: 'Running'),
+              CategoryButton(name: 'Training'),
+              CategoryButton(name: 'Basketball'),
+              CategoryButton(name: 'Football'),
             ],
           ),
         ),
