@@ -7,60 +7,65 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 215,
-      height: 278,
-      padding: EdgeInsets.only(top: defaultMargin),
-      margin: EdgeInsets.only(right: defaultMargin),
-      decoration: BoxDecoration(
-        color: whiteColor,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Column(
-        children: [
-          Image.asset('assets/image_new_arrival1.png'),
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.only(
-              top: defaultMargin,
-              left: 20,
-              right: 20,
-              bottom: 20,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Hiking',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 12,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/product');
+      },
+      child: Container(
+        width: 215,
+        height: 278,
+        padding: EdgeInsets.only(top: defaultMargin),
+        margin: EdgeInsets.only(right: defaultMargin),
+        decoration: BoxDecoration(
+          color: whiteColor,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          children: [
+            Image.asset('assets/image_new_arrival1.png'),
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.only(
+                top: defaultMargin,
+                left: 20,
+                right: 20,
+                bottom: 20,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Hiking',
+                    style: subtitleTextStyle.copyWith(
+                      fontSize: 12,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 6,
-                ),
-                Text(
-                  'COURT VISION 2.0',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 18,
-                    fontWeight: semiBold,
+                  SizedBox(
+                    height: 6,
                   ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(
-                  height: 6,
-                ),
-                Text(
-                  '\$58,67',
-                  style: priceTextStyle.copyWith(
-                    fontSize: 14,
-                    fontWeight: medium,
+                  Text(
+                    'COURT VISION 2.0',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 18,
+                      fontWeight: semiBold,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                )
-              ],
-            ),
-          )
-        ],
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Text(
+                    '\$58,67',
+                    style: priceTextStyle.copyWith(
+                      fontSize: 14,
+                      fontWeight: medium,
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
