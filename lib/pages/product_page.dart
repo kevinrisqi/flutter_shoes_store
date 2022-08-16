@@ -3,6 +3,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shoes_store/theme.dart';
+import 'package:flutter_shoes_store/widgets/product_tile.dart';
 
 class ProductPage extends StatefulWidget {
   ProductPage({Key? key}) : super(key: key);
@@ -18,6 +19,15 @@ class _ProductPageState extends State<ProductPage> {
     'assets/image_shoes_1.png',
   ];
 
+  List familiarShoes = [
+    'assets/image_shoes_1.png',
+    'assets/image_shoes_2.png',
+    'assets/image_shoes_3.png',
+    'assets/image_shoes_4.png',
+    'assets/image_shoes_5.png',
+    'assets/image_shoes_6.png',
+  ];
+
   int currentIndex = 0;
 
   @override
@@ -30,6 +40,21 @@ class _ProductPageState extends State<ProductPage> {
         decoration: BoxDecoration(
           color: currentIndex == index ? primaryColor : indicatorColor,
           borderRadius: BorderRadius.circular(10),
+        ),
+      );
+    }
+
+    Widget familiarShoesCard(String imageUrl) {
+      return Container(
+        width: 54,
+        height: 54,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          image: DecorationImage(
+            image: AssetImage(
+              imageUrl,
+            ),
+          ),
         ),
       );
     }
@@ -90,11 +115,167 @@ class _ProductPageState extends State<ProductPage> {
       );
     }
 
+    Widget content() {
+      return Container(
+        width: double.infinity,
+        margin: EdgeInsets.only(top: 17),
+        padding: EdgeInsets.all(defaultMargin),
+        decoration: BoxDecoration(
+          color: bgColor1,
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(24),
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Terrex Urban Low',
+                      style: primaryTextStyle.copyWith(
+                        fontSize: 18,
+                        fontWeight: semiBold,
+                      ),
+                    ),
+                    Text(
+                      'Hiking',
+                      style: subtitleTextStyle,
+                    ),
+                  ],
+                ),
+                Image.asset(
+                  'assets/button_wishlist_grey.png',
+                  width: 46,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: bgColor2,
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Price start from',
+                    style: primaryTextStyle,
+                  ),
+                  Text(
+                    '\$143,55',
+                    style: priceTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: defaultMargin,
+            ),
+            Text(
+              'Description',
+              style: primaryTextStyle.copyWith(
+                fontWeight: medium,
+              ),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Text(
+              'Unpaved trails and mixed surfaces are easy \nwhen you have the traction and support you\nneed. Casual enough for the daily commute.',
+              style: subtitleTextStyle,
+              textAlign: TextAlign.justify,
+            ),
+            SizedBox(
+              height: defaultMargin,
+            ),
+            Text(
+              'Familiar Shoes',
+              style: primaryTextStyle.copyWith(fontWeight: medium),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: familiarShoes.map(
+                  (image) {
+                    return Container(
+                      margin: EdgeInsets.only(right: 16),
+                      child: familiarShoesCard(image),
+                    );
+                  },
+                ).toList(),
+              ),
+            ),
+            SizedBox(
+              height: defaultMargin,
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 54,
+                  height: 54,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: primaryColor),
+                  ),
+                  child: Icon(
+                    Icons.chat,
+                    color: primaryColor,
+                  ),
+                ),
+                SizedBox(
+                  width: 16,
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      primary: primaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 15,
+                      ),
+                      child: Text(
+                        'Add to Cart',
+                        style: primaryTextStyle.copyWith(
+                          fontSize: 16,
+                          fontWeight: semiBold,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: bgColor6,
       body: ListView(
         children: [
           header(),
+          content(),
         ],
       ),
     );
