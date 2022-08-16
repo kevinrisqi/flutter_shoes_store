@@ -11,6 +11,7 @@ Color greyColor = const Color(0xff808191);
 Color transparentColor = Colors.transparent;
 Color subtitleColor = const Color(0xff302F37);
 Color whiteColor = const Color(0xffF1F0F2);
+Color indicatorColor = const Color(0xffC4C4C4);
 
 Color bgColor1 = const Color(0xff1F1D2B);
 Color bgColor2 = const Color(0xff2B2937);
